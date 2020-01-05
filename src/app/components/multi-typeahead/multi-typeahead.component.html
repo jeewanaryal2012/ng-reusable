@@ -1,0 +1,22 @@
+<div class="multi-typeahead">
+  <div class="input-wrapper">
+    <input class="search-input" type="text" (click)="inputClicked($event)" (keyup)="filterTypeahead($event)" />
+    <i class="fas" [ngClass]="config.defaultShow === false ? 'fa-angle-down' : 'fa-angle-up'"
+      (click)="config.defaultShow = !config.defaultShow"></i>
+  </div>
+  <div class="search-result" [hidden]="config.defaultShow === false">
+    <ul>
+      <li *ngFor="let item of jsonData; let i = index">
+        <label class="container">{{item[config.displayLabel]}}
+          <input [type]="config.multiSelect === true ? 'checkbox' : 'radio'"
+            [name]="config.multiSelect === true ? 'item-'+item.name : 'th_radio'" #myItem
+            (change)="itemClicked($event, item.id, item)">
+          <span class="checkmark" [ngClass]="config.multiSelect === true ? '' : 'th-radio'"></span>
+        </label>
+
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="overlay" (click)="config.defaultShow = false"></div>

@@ -1,0 +1,5 @@
+<div *ngIf="showForm === true" style="width: 200px;">
+  <app-multi-typeahead [data]="parentData" [config]="config" (fetchData)="getRemoteData($event)"
+    (onSelectItem)="getSelectedItem($event)">
+  </app-multi-typeahead>
+</div>
