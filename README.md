@@ -16,4 +16,3 @@ npm install ja-typeahead
 ![Screenshot](screen-shots/3.png)
 ![Screenshot](screen-shots/4.png)
 ![Screenshot](screen-shots/5.png)
-![Screenshot](screen-shots/6.png)
