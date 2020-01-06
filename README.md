@@ -1,4 +1,4 @@
 
 Angular reusable components and libraries
 
-![Screenshot](1.png)
+![Screenshot](screen-shots/1.png)
