@@ -1,2 +1,13 @@
+# Angular Typeahead
 
-Angular reusable components and libraries
+Angular Typeahead with search functionality
+
+
+### Installing
+
+
+```
+npm install ja-typeahead
+```
+
+### Screen shots
