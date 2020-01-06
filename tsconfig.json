@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ja-typeahead": [
+        "dist/ja-typeahead"
+      ],
+      "ja-typeahead/*": [
+        "dist/ja-typeahead/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

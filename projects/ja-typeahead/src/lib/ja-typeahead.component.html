@@ -1,0 +1,36 @@
+<div class="multi-typeahead">
+    <div class="input-wrapper">
+        <div class="selected-list" *ngIf="config.multiSelect === false">
+            <span class="chip" *ngIf="selectedIds.length > 0">
+                {{selectedIds[selectedIds.length - 1].itm[config.displayLabel]}}
+            </span>
+        </div>
+        <div class="selected-list" *ngIf="config.multiSelect === true">
+            <span *ngIf="selectedIds.length <= 2">
+                <span *ngFor="let item of selectedIds; let i = index"
+                    class="chip">{{item.itm[config.displayLabel]}}</span>
+            </span>
+            <span *ngIf="selectedIds.length > 2" class="chip">
+                {{selectedIds.length}}+ items selected
+            </span>
+        </div>
+        <input class="search-input" type="text" (click)="inputClicked($event)" (keyup)="filterTypeahead($event)" />
+        <i class="fas" [ngClass]="config.defaultShow === false ? 'fa-angle-down' : 'fa-angle-up'"
+            (click)="config.defaultShow = !config.defaultShow"></i>
+    </div>
+    <div class="search-result" [hidden]="config.defaultShow === false">
+        <ul>
+            <li *ngFor="let item of jsonData; let i = index">
+                <label class="container">{{item[config.displayLabel]}}
+                    <input [type]="config.multiSelect === true ? 'checkbox' : 'radio'"
+                        [name]="config.multiSelect === true ? 'item-'+item.name : 'th_radio'" #myItem
+                        (change)="itemClicked($event, item.id, item)">
+                    <span class="checkmark" [ngClass]="config.multiSelect === true ? '' : 'th-radio'"></span>
+                </label>
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="overlay" (click)="config.defaultShow = false"></div>

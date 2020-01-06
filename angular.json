@@ -124,6 +124,41 @@
           }
         }
       }
+    },
+    "ja-typeahead": {
+      "projectType": "library",
+      "root": "projects/ja-typeahead",
+      "sourceRoot": "projects/ja-typeahead/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ja-typeahead/tsconfig.lib.json",
+            "project": "projects/ja-typeahead/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ja-typeahead/src/test.ts",
+            "tsConfig": "projects/ja-typeahead/tsconfig.spec.json",
+            "karmaConfig": "projects/ja-typeahead/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ja-typeahead/tsconfig.lib.json",
+              "projects/ja-typeahead/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "modules"
 }

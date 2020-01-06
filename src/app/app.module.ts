@@ -10,6 +10,8 @@ import { MultiTypeaheadComponent } from './components/multi-typeahead/multi-type
 import { NavComponent } from './common/nav/nav.component';
 import { ContainerComponent } from './components/container/container.component';
 
+import { JaTypeaheadModule } from 'ja-typeahead';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import { ContainerComponent } from './components/container/container.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    JaTypeaheadModule
   ],
   providers: [],
   bootstrap: [AppComponent]
